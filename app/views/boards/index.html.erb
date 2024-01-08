@@ -1,0 +1,28 @@
+<% if flash[:alert] %>
+  <div class="alert alert-danger">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<div class="grid-container">
+  <div class="item board-creator">
+    <div class="card-heading bg-primary text-white text-center rounded p-1">
+      <h2>Board Info</h2>
+    </div>
+    <%= render 'boards/board_form' %>
+  </div>
+
+  <div class="item recent-boards">
+    <h2 class="card-heading bg-primary text-white text-center rounded p-1 mb-4">Recent Boards</h2>
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+      <%= render partial: 'boards/boards_table', locals: { boards: @recent_boards } %>
+    </div>
+  </div>
+
+  <div class="item all-boards">
+    <h2 class="card-heading bg-primary text-white text-center rounded p-1 text-center mb-4">All Boards</h2>
+    <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
+      <%= render partial: 'boards/boards_table', locals: { boards: @boards } %>
+    </div>
+  </div>
+</div>

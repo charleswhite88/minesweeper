@@ -1,0 +1,19 @@
+<%= form_with(model: Board, url: create_board_path, method: :post, local: true) do |form| %>
+  <div class="mb-3 mt-3">
+    <%= form.email_field :email, class: 'form-control', placeholder: 'Email', required: true %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.number_field :rows, class: 'form-control', placeholder: 'Rows', required: true, min: 1 %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.number_field :cols, class: 'form-control', placeholder: 'Columns', required: true, min: 1 %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.number_field :mines, class: 'form-control', placeholder: 'Mines', required: true, min: 1 %>
+  </div>
+
+  <%= form.submit "Generate Board", class: 'btn btn-primary mt-3' %>
+<% end %>
