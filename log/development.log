@@ -1,0 +1,413 @@
+Started GET "/" for ::1 at 2024-01-05 11:12:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (24.1ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 97.4ms | Allocations: 8747)
+  Rendered boards/_boards_table.html.erb (Duration: 7.3ms | Allocations: 2031)
+  Rendered boards/index.html.erb within layouts/application (Duration: 128.0ms | Allocations: 14272)
+  Rendered layout layouts/application.html.erb (Duration: 2243.9ms | Allocations: 129449)
+Completed 200 OK in 4480ms (Views: 2198.7ms | ActiveRecord: 102.1ms | Allocations: 1089836)
+
+
+Started GET "/boards/1" for ::1 at 2024-01-05 11:12:56 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (41.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 42.0ms | Allocations: 6907)
+
+
+  
+NoMethodError (undefined method `check_mines_location?' for BoardCreator:Class
+
+                grid[r][c] = check_mines_location?(index) ? -1 : count_neighbour_mines(index, rows, cols, mines_locations)
+                             ^^^^^^^^^^^^^^^^^^^^^):
+  
+app/services/board_creator.rb:7:in `block (2 levels) in generate_board'
+app/services/board_creator.rb:5:in `times'
+app/services/board_creator.rb:5:in `block in generate_board'
+app/services/board_creator.rb:4:in `times'
+app/services/board_creator.rb:4:in `generate_board'
+app/controllers/boards_controller.rb:21:in `show'
+Started GET "/boards/1" for ::1 at 2024-01-05 11:13:28 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.9ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.2ms | Allocations: 7175)
+
+
+  
+NameError (undefined local variable or method `mines_locations' for BoardCreator:Class
+
+      mines_locations.include?(index)
+      ^^^^^^^^^^^^^^^):
+  
+app/services/board_creator.rb:40:in `check_mines_location?'
+app/services/board_creator.rb:7:in `block (2 levels) in generate_board'
+app/services/board_creator.rb:5:in `times'
+app/services/board_creator.rb:5:in `block in generate_board'
+app/services/board_creator.rb:4:in `times'
+app/services/board_creator.rb:4:in `generate_board'
+app/controllers/boards_controller.rb:21:in `show'
+Started GET "/boards/1" for ::1 at 2024-01-05 11:14:02 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 17097)
+Completed 200 OK in 30ms (Views: 17.8ms | ActiveRecord: 3.1ms | Allocations: 22336)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:14:08 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.3ms | Allocations: 3386)
+  Rendered boards/_boards_table.html.erb (Duration: 2.2ms | Allocations: 2027)
+  Rendered boards/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 6720)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 10163)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.3ms | Allocations: 10555)
+
+
+Started GET "/boards/8" for ::1 at 2024-01-05 11:14:11 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 511)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4237)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 5227)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:14:15 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.5ms | Allocations: 3274)
+  Rendered boards/_boards_table.html.erb (Duration: 3.5ms | Allocations: 2027)
+  Rendered boards/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 6503)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 9944)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.4ms | Allocations: 10262)
+
+
+Started POST "/create_board" for ::1 at 2024-01-05 11:14:37 -0500
+Processing by BoardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"email"=>"test@gmail.com", "rows"=>"5", "cols"=>"5", "mines"=>"5"}, "commit"=>"Generate Board"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mBoard Create (46.4ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test@gmail.com"], ["mines", "{4,2,3,17,18}"], ["rows", 5], ["cols", 5], ["created_at", "2024-01-05 16:14:37.170012"], ["updated_at", "2024-01-05 16:14:37.170012"]]
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (43.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+Redirected to http://localhost:3000/boards/37
+Completed 302 Found in 99ms (ActiveRecord: 90.2ms | Allocations: 4027)
+
+
+Started GET "/boards/37" for ::1 at 2024-01-05 11:14:37 -0500
+Processing by BoardsController#show as TURBO_STREAM
+  Parameters: {"id"=>"37"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4576)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5752)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:14:54 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  [1m[36mBoard Load (0.8ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.2ms | Allocations: 3383)
+  Rendered boards/_boards_table.html.erb (Duration: 2.4ms | Allocations: 2083)
+  Rendered boards/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 6704)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 10146)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 0.8ms | Allocations: 10492)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:18:18 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.5ms | Allocations: 1270)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.3ms | Allocations: 3691)
+  Rendered boards/_boards_table.html.erb (Duration: 2.1ms | Allocations: 2083)
+  Rendered boards/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 7917)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 11731)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 12884)
+
+
+Started POST "/create_board" for ::1 at 2024-01-05 11:18:39 -0500
+Processing by BoardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"email"=>"test@gmail.com", "rows"=>"10", "cols"=>"10", "mines"=>"5"}, "commit"=>"Generate Board"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mBoard Create (40.3ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test@gmail.com"], ["mines", "{89,49,57,58,69}"], ["rows", 10], ["cols", 10], ["created_at", "2024-01-05 16:18:39.897033"], ["updated_at", "2024-01-05 16:18:39.897033"]]
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+Redirected to http://localhost:3000/boards/38
+Completed 302 Found in 50ms (ActiveRecord: 42.4ms | Allocations: 2538)
+
+
+Started GET "/boards/38" for ::1 at 2024-01-05 11:18:39 -0500
+Processing by BoardsController#show as TURBO_STREAM
+  Parameters: {"id"=>"38"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3174)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 6850)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 9102)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:18:46 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.1ms | Allocations: 835)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.1ms | Allocations: 3425)
+  Rendered boards/_boards_table.html.erb (Duration: 2.4ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 6832)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 10273)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 10607)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:20:05 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 2.4ms | Allocations: 1267)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 6.1ms | Allocations: 3767)
+  Rendered boards/_boards_table.html.erb (Duration: 2.9ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 8047)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 11861)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.3ms | Allocations: 12989)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:20:48 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 0.8ms | Allocations: 835)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 4.6ms | Allocations: 3425)
+  Rendered boards/_boards_table.html.erb (Duration: 2.6ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 6829)
+  Rendered layout layouts/application.html.erb (Duration: 698.0ms | Allocations: 19642)
+Completed 200 OK in 700ms (Views: 698.6ms | ActiveRecord: 0.3ms | Allocations: 19996)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:22:32 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 3.5ms | Allocations: 1267)
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 7.0ms | Allocations: 3767)
+  Rendered boards/_boards_table.html.erb (Duration: 3.1ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 8031)
+  Rendered layout layouts/application.html.erb (Duration: 640.3ms | Allocations: 21245)
+Completed 200 OK in 652ms (Views: 646.0ms | ActiveRecord: 0.5ms | Allocations: 22374)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:22:57 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 3.2ms | Allocations: 1267)
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.4ms | Allocations: 3767)
+  Rendered boards/_boards_table.html.erb (Duration: 2.3ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 8035)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 11859)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.4ms | Allocations: 13037)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:23:08 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.3ms | Allocations: 1267)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 6.0ms | Allocations: 3775)
+  Rendered boards/_boards_table.html.erb (Duration: 2.6ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 8036)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 11851)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.3ms | Allocations: 13034)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:24:58 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.8ms | Allocations: 1267)
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.5ms | Allocations: 3770)
+  Rendered boards/_boards_table.html.erb (Duration: 2.9ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 8019)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 11833)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 13001)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:25:09 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.9ms | Allocations: 1267)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.7ms | Allocations: 3767)
+  Rendered boards/_boards_table.html.erb (Duration: 2.5ms | Allocations: 2139)
+  Rendered boards/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 8035)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 11849)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.3ms | Allocations: 13020)
+
+
+  [1m[36mBoard Load (1.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  [1m[36mBoard Count (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1) subquery_for_count[0m  [["LIMIT", 10]]
+Started GET "/boards" for ::1 at 2024-01-05 11:28:38 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 2.3ms | Allocations: 1267)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 3.5ms | Allocations: 1729)
+  [1m[36mBoard Load (0.7ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 4.9ms | Allocations: 3426)
+  Rendered boards/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 7289)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 11104)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 1.0ms | Allocations: 12272)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:29:45 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 2.0ms | Allocations: 1267)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 3.4ms | Allocations: 1717)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 4.7ms | Allocations: 3426)
+  Rendered boards/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 7285)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 11099)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.5ms | Allocations: 12267)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:31:11 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.4ms | Allocations: 998)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 3.5ms | Allocations: 1720)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 4.5ms | Allocations: 3426)
+  Rendered boards/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 6987)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 10801)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.5ms | Allocations: 11969)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:32:12 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 1.3ms | Allocations: 995)
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 2.9ms | Allocations: 1721)
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 4.7ms | Allocations: 3426)
+  Rendered boards/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 7012)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 10826)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.5ms | Allocations: 11994)
+
+
+Started POST "/create_board" for ::1 at 2024-01-05 11:32:52 -0500
+Processing by BoardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "board"=>{"email"=>"test2@gmail.com", "rows"=>"5", "cols"=>"5", "mines"=>"2"}, "commit"=>"Generate Board"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mBoard Create (0.3ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test2@gmail.com"], ["mines", "{3,15}"], ["rows", 5], ["cols", 5], ["created_at", "2024-01-05 16:32:52.480861"], ["updated_at", "2024-01-05 16:32:52.480861"]]
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/boards_controller.rb:12:in `create'
+Redirected to http://localhost:3000/boards/39
+Completed 302 Found in 47ms (ActiveRecord: 41.0ms | Allocations: 2519)
+
+
+Started GET "/boards/39" for ::1 at 2024-01-05 11:32:52 -0500
+Processing by BoardsController#show as TURBO_STREAM
+  Parameters: {"id"=>"39"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1074)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4756)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5992)
+
+
+Started GET "/boards" for ::1 at 2024-01-05 11:33:09 -0500
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Rendered boards/_board_form.html.erb (Duration: 0.8ms | Allocations: 643)
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 2.4ms | Allocations: 1351)
+  [1m[36mBoard Load (0.5ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  ↳ app/views/boards/_boards_table.html.erb:13:in `each_with_index'
+  Rendered boards/_boards_table.html.erb (Duration: 5.0ms | Allocations: 3498)
+  Rendered boards/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 5952)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 9393)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.7ms | Allocations: 9727)
+
+
+Started GET "/boards/1" for ::1 at 2024-01-05 11:36:29 -0500
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBoard Load (0.3ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/boards_controller.rb:43:in `find_board'
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Rendered boards/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 175)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3854)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.3ms | Allocations: 4636)
+
+
